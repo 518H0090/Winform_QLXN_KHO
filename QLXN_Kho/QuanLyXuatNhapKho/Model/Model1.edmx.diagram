@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="557004274e9a495ebc46b390ac9e3eb1" Name="Diagram1">
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Input" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.InputInfo" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Object" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Output" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.OutputInfo" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Suplier" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Unit" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.UserRole" Width="1.5" PointX="1.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLXuatNhapKhoModel.Users" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__Input__DateInput__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__InputInfo__IdInp__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__InputInfo__IdObj__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__Object__IdSuplie__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__Object__IdUnit__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__OutputInf__IdObj__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__Output__DateOutp__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__OutputInf__IdOut__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QLXuatNhapKhoModel.FK__Users__IdRole__1A14E395" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLXuatNhapKhoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Input">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="DateInput" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Input__DateInput__1CF15040" FromRole="Input" ToRole="Users" />
+    <NavigationProperty Name="InputInfo" Relationship="Self.FK__InputInfo__IdInp__22AA2996" FromRole="Input" ToRole="InputInfo" />
+  </EntityType>
+  <EntityType Name="InputInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdObject" Type="Int32" Nullable="false" />
+    <Property Name="IdInput" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="InputPrice" Type="Double" />
+    <NavigationProperty Name="Input" Relationship="Self.FK__InputInfo__IdInp__22AA2996" FromRole="InputInfo" ToRole="Input" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__InputInfo__IdObj__21B6055D" FromRole="InputInfo" ToRole="Object" />
+  </EntityType>
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdUnit" Type="Int32" Nullable="false" />
+    <Property Name="IdSuplier" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InputInfo" Relationship="Self.FK__InputInfo__IdObj__21B6055D" FromRole="Object" ToRole="InputInfo" />
+    <NavigationProperty Name="Suplier" Relationship="Self.FK__Object__IdSuplie__145C0A3F" FromRole="Object" ToRole="Suplier" />
+    <NavigationProperty Name="Unit" Relationship="Self.FK__Object__IdUnit__15502E78" FromRole="Object" ToRole="Unit" />
+    <NavigationProperty Name="OutputInfo" Relationship="Self.FK__OutputInf__IdObj__2A4B4B5E" FromRole="Object" ToRole="OutputInfo" />
+  </EntityType>
+  <EntityType Name="Output">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="DateOutput" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Output__DateOutp__25869641" FromRole="Output" ToRole="Users" />
+    <NavigationProperty Name="OutputInfo" Relationship="Self.FK__OutputInf__IdOut__2B3F6F97" FromRole="Output" ToRole="OutputInfo" />
+  </EntityType>
+  <EntityType Name="OutputInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdOutput" Type="Int32" Nullable="false" />
+    <Property Name="IdObject" Type="Int32" Nullable="false" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="OutputPrice" Type="Double" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__OutputInf__IdObj__2A4B4B5E" FromRole="OutputInfo" ToRole="Object" />
+    <NavigationProperty Name="Output" Relationship="Self.FK__OutputInf__IdOut__2B3F6F97" FromRole="OutputInfo" ToRole="Output" />
+  </EntityType>
+  <EntityType Name="Suplier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__Object__IdSuplie__145C0A3F" FromRole="Suplier" ToRole="Object" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Object" Relationship="Self.FK__Object__IdUnit__15502E78" FromRole="Unit" ToRole="Object" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__IdRole__1A14E395" FromRole="UserRole" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdRole" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Input" Relationship="Self.FK__Input__DateInput__1CF15040" FromRole="Users" ToRole="Input" />
+    <NavigationProperty Name="Output" Relationship="Self.FK__Output__DateOutp__25869641" FromRole="Users" ToRole="Output" />
+    <NavigationProperty Name="UserRole" Relationship="Self.FK__Users__IdRole__1A14E395" FromRole="Users" ToRole="UserRole" />
+  </EntityType>
+  <Association Name="FK__Input__DateInput__1CF15040">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Input" Type="Self.Input" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Input">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InputInfo__IdInp__22AA2996">
+    <End Role="Input" Type="Self.Input" Multiplicity="1" />
+    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Input">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InputInfo">
+        <PropertyRef Name="IdInput" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__InputInfo__IdObj__21B6055D">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InputInfo">
+        <PropertyRef Name="IdObject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Object__IdSuplie__145C0A3F">
+    <End Role="Suplier" Type="Self.Suplier" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="IdSuplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Object__IdUnit__15502E78">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OutputInf__IdObj__2A4B4B5E">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="OutputInfo" Type="Self.OutputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutputInfo">
+        <PropertyRef Name="IdObject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Output__DateOutp__25869641">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Output" Type="Self.Output" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Output">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OutputInf__IdOut__2B3F6F97">
+    <End Role="Output" Type="Self.Output" Multiplicity="1" />
+    <End Role="OutputInfo" Type="Self.OutputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Output">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OutputInfo">
+        <PropertyRef Name="IdOutput" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__IdRole__1A14E395">
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLXNKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Input" EntityType="Self.Input" />
+    <EntitySet Name="InputInfo" EntityType="Self.InputInfo" />
+    <EntitySet Name="Object" EntityType="Self.Object" />
+    <EntitySet Name="Output" EntityType="Self.Output" />
+    <EntitySet Name="OutputInfo" EntityType="Self.OutputInfo" />
+    <EntitySet Name="Suplier" EntityType="Self.Suplier" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Input__DateInput__1CF15040" Association="Self.FK__Input__DateInput__1CF15040">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Input" EntitySet="Input" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InputInfo__IdInp__22AA2996" Association="Self.FK__InputInfo__IdInp__22AA2996">
+      <End Role="Input" EntitySet="Input" />
+      <End Role="InputInfo" EntitySet="InputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__InputInfo__IdObj__21B6055D" Association="Self.FK__InputInfo__IdObj__21B6055D">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="InputInfo" EntitySet="InputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Object__IdSuplie__145C0A3F" Association="Self.FK__Object__IdSuplie__145C0A3F">
+      <End Role="Suplier" EntitySet="Suplier" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Object__IdUnit__15502E78" Association="Self.FK__Object__IdUnit__15502E78">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OutputInf__IdObj__2A4B4B5E" Association="Self.FK__OutputInf__IdObj__2A4B4B5E">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="OutputInfo" EntitySet="OutputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Output__DateOutp__25869641" Association="Self.FK__Output__DateOutp__25869641">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Output" EntitySet="Output" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OutputInf__IdOut__2B3F6F97" Association="Self.FK__OutputInf__IdOut__2B3F6F97">
+      <End Role="Output" EntitySet="Output" />
+      <End Role="OutputInfo" EntitySet="OutputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__IdRole__1A14E395" Association="Self.FK__Users__IdRole__1A14E395">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="AddSuplier">
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUnit">
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSuplier">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteUnit">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="EditSuplier">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="EditUnit">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLXuatNhapKhoModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLXuatNhapKhoModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="ChangePass">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ChangePassword">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="EditAcc">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUser">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="LockUSer">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="OpenUSer">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RecoveryPass">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddObject">
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+      <Parameter Name="IdUnit" Mode="In" Type="Int32" />
+      <Parameter Name="IdSuplier" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteObject">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="EditObject">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="DisplayName" Mode="In" Type="String" />
+      <Parameter Name="IdUnit" Mode="In" Type="Int32" />
+      <Parameter Name="IdSuplier" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddInput">
+      <Parameter Name="IdUser" Mode="In" Type="Int32" />
+      <Parameter Name="DateInput" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddInputInfo">
+      <Parameter Name="IdInput" Mode="In" Type="Int32" />
+      <Parameter Name="IdObject" Mode="In" Type="Int32" />
+      <Parameter Name="Count" Mode="In" Type="Int32" />
+      <Parameter Name="InputPrice" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="AddOutput">
+      <Parameter Name="IdUser" Mode="In" Type="Int32" />
+      <Parameter Name="DateOutput" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddOutputInfo">
+      <Parameter Name="IdOutput" Mode="In" Type="Int32" />
+      <Parameter Name="IdObject" Mode="In" Type="Int32" />
+      <Parameter Name="Count" Mode="In" Type="Int32" />
+      <Parameter Name="OutputPrice" Mode="In" Type="Double" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

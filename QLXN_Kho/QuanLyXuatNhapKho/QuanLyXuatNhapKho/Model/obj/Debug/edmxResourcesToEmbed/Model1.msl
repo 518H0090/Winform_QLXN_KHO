@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLXuatNhapKhoModelStoreContainer" CdmEntityContainer="QLXNKEntities">
+    <EntitySetMapping Name="Input">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Input">
+        <MappingFragment StoreEntitySet="Input">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="DateInput" ColumnName="DateInput" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputInfo">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.InputInfo">
+        <MappingFragment StoreEntitySet="InputInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="IdInput" ColumnName="IdInput" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Object">
+        <MappingFragment StoreEntitySet="Object">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="IdSuplier" ColumnName="IdSuplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Output">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Output">
+        <MappingFragment StoreEntitySet="Output">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="DateOutput" ColumnName="DateOutput" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutputInfo">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.OutputInfo">
+        <MappingFragment StoreEntitySet="OutputInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suplier">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Suplier">
+        <MappingFragment StoreEntitySet="Suplier">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="QLXuatNhapKhoModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddSuplier" FunctionName="QLXuatNhapKhoModel.Store.AddSuplier" />
+    <FunctionImportMapping FunctionImportName="AddUnit" FunctionName="QLXuatNhapKhoModel.Store.AddUnit" />
+    <FunctionImportMapping FunctionImportName="DeleteSuplier" FunctionName="QLXuatNhapKhoModel.Store.DeleteSuplier" />
+    <FunctionImportMapping FunctionImportName="DeleteUnit" FunctionName="QLXuatNhapKhoModel.Store.DeleteUnit" />
+    <FunctionImportMapping FunctionImportName="EditSuplier" FunctionName="QLXuatNhapKhoModel.Store.EditSuplier" />
+    <FunctionImportMapping FunctionImportName="EditUnit" FunctionName="QLXuatNhapKhoModel.Store.EditUnit" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLXuatNhapKhoModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLXuatNhapKhoModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLXuatNhapKhoModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLXuatNhapKhoModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLXuatNhapKhoModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLXuatNhapKhoModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLXuatNhapKhoModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLXuatNhapKhoModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLXuatNhapKhoModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="ChangePassword" FunctionName="QLXuatNhapKhoModel.Store.ChangePassword" />
+    <FunctionImportMapping FunctionImportName="EditAcc" FunctionName="QLXuatNhapKhoModel.Store.EditAcc" />
+    <FunctionImportMapping FunctionImportName="AddUser" FunctionName="QLXuatNhapKhoModel.Store.AddUser" />
+    <FunctionImportMapping FunctionImportName="LockUSer" FunctionName="QLXuatNhapKhoModel.Store.LockUSer" />
+    <FunctionImportMapping FunctionImportName="OpenUSer" FunctionName="QLXuatNhapKhoModel.Store.OpenUSer" />
+    <FunctionImportMapping FunctionImportName="RecoveryPass" FunctionName="QLXuatNhapKhoModel.Store.RecoveryPass" />
+    <FunctionImportMapping FunctionImportName="AddObject" FunctionName="QLXuatNhapKhoModel.Store.AddObject" />
+    <FunctionImportMapping FunctionImportName="DeleteObject" FunctionName="QLXuatNhapKhoModel.Store.DeleteObject" />
+    <FunctionImportMapping FunctionImportName="EditObject" FunctionName="QLXuatNhapKhoModel.Store.EditObject" />
+    <FunctionImportMapping FunctionImportName="AddInput" FunctionName="QLXuatNhapKhoModel.Store.AddInput" />
+    <FunctionImportMapping FunctionImportName="AddInputInfo" FunctionName="QLXuatNhapKhoModel.Store.AddInputInfo" />
+    <FunctionImportMapping FunctionImportName="AddOutput" FunctionName="QLXuatNhapKhoModel.Store.AddOutput" />
+    <FunctionImportMapping FunctionImportName="AddOutputInfo" FunctionName="QLXuatNhapKhoModel.Store.AddOutputInfo" />
+  </EntityContainerMapping>
+</Mapping>

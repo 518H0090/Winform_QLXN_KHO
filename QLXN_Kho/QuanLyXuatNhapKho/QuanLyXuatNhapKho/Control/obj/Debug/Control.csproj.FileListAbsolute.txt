@@ -1,0 +1,15 @@
+D:\QuanLyXuatNhapKho\Control\obj\Debug\Control.csprojAssemblyReference.cache
+D:\QuanLyXuatNhapKho\Control\obj\Debug\Control.csproj.CoreCompileInputs.cache
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Control.dll.config
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Control.dll
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Control.pdb
+D:\QuanLyXuatNhapKho\Control\bin\Debug\EntityFramework.dll
+D:\QuanLyXuatNhapKho\Control\bin\Debug\EntityFramework.SqlServer.dll
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Model.dll
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Model.pdb
+D:\QuanLyXuatNhapKho\Control\bin\Debug\Model.dll.config
+D:\QuanLyXuatNhapKho\Control\bin\Debug\EntityFramework.xml
+D:\QuanLyXuatNhapKho\Control\bin\Debug\EntityFramework.SqlServer.xml
+D:\QuanLyXuatNhapKho\Control\obj\Debug\Control.csproj.CopyComplete
+D:\QuanLyXuatNhapKho\Control\obj\Debug\Control.dll
+D:\QuanLyXuatNhapKho\Control\obj\Debug\Control.pdb
